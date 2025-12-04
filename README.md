@@ -25,8 +25,45 @@ Download the latest Ghostscript (64-bit Windows):
 During installation, ensure:
 ✔ Add to PATH (optional, recommended)
 
----
-
 ## 📁 Project Files
 This repository includes:
 compress_pdf.bat
+
+---
+## 🚀 Usage
+
+### **1. Place Your PDFs**
+Copy your `.pdf` files into the same folder as `compress_pdf.bat`.
+
+### **2. Run the Script**
+Double-click:
+Compress_PDF.bat
+---
+
+The script will:
+- Read all `.pdf` files in the folder  
+- Compress each file using Ghostscript  
+- Create a temporary file named `compressed_filename.pdf` (optional) 
+- Automatically overwrite the original file  
+
+---
+
+You can modify this line to adjust compression:
+`-dPDFSETTINGS=/ebook`
+
+Available options:
+Setting	Quality	Description
+/screen	Low	smallest file, lowest quality
+/ebook	Medium	good balance (recommended)
+/printer	High	better quality, larger file
+/prepress	Very high	preserves most details
+/default	Standard	baseline Ghostscript output
+
+Example for maximum compression:
+`-dPDFSETTINGS=/screen`
+
+If you want to preserve original files:
+Add this inside the loop:
+`copy "%%f" "backup_%%f"`
+
+
