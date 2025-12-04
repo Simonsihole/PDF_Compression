@@ -66,4 +66,6 @@ If you want to preserve original files:
 Add this inside the loop:
 `copy "%%f" "backup_%%f"`
 
+if you want to use a GUI App you can just donwload the `pdfcompressor.exe`
+
 
